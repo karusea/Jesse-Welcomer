@@ -11,7 +11,7 @@ Client.on('ready', ()=>{
 })
 
 
-// Checks to see if people have entered a vc
+// Checks to see if people have entered a vc 
 Client.on("voiceStateUpdate", function(NewUpdate, OldUpdate){
 
     if(NewUpdate.id === process.env.userId && NewUpdate.channelID === null){ // checks to see if the man in question has joined
@@ -19,8 +19,8 @@ Client.on("voiceStateUpdate", function(NewUpdate, OldUpdate){
  
             voiceChannel.join().then(connection =>{// joins and then we can play the funny tune
                 const dispatcher = connection.play('./thesong.mp3');
-                dispatcher.on("finish", v => { // once it ends we can leave
-                    voiceChannel.leave();
+                dispatcher.on("finish", Idunno => { // once it ends we can leave
+                    voiceChannel.leave(); 
                 })
             })
 
